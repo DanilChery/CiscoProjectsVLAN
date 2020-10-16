@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="VLAN" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="R1" type="qemu" template="vios" image="vios-15.5.3M" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="4" uuid="51af681a-4f31-4f66-a7d6-91d568243fad" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.12.0" qemu_arch="x86_64" delay="0" icon="Router.png" config="0" left="507" top="246">
+        <interface id="0" name="Gi0/0" type="ethernet" network_id="1"/>
+      </node>
+      <node id="2" name="S1" type="qemu" template="viosl2" image="viosl2-15.2.4.55e" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="8" uuid="d8a8e9fc-53be-41e3-bd3d-2ad3f7ba476d" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.12.0" qemu_arch="x86_64" delay="0" icon="Switch.png" config="0" left="747" top="255">
+        <interface id="0" name="Gi0/0" type="ethernet" network_id="1"/>
+        <interface id="1" name="Gi0/1" type="ethernet" network_id="2"/>
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="3"/>
+      </node>
+      <node id="3" name="S2" type="qemu" template="viosl2" image="viosl2-15.2.4.55e" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="8" uuid="44e1406c-1466-4d6c-81e5-32374af337e8" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.12.0" qemu_arch="x86_64" delay="0" icon="Switch.png" config="0" left="1005" top="255">
+        <interface id="1" name="Gi0/1" type="ethernet" network_id="2"/>
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="4"/>
+      </node>
+      <node id="4" name="PC-A" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="756" top="597">
+        <interface id="0" name="eth0" type="ethernet" network_id="3"/>
+      </node>
+      <node id="5" name="PC-B" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="1029" top="582">
+        <interface id="0" name="eth0" type="ethernet" network_id="4"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-S1iface_0" left="807" top="295" visibility="0"/>
+      <network id="3" type="bridge" name="Net-S1iface_2" left="807" top="295" visibility="0"/>
+      <network id="2" type="bridge" name="Net-S1iface_1" left="807" top="295" visibility="0"/>
+      <network id="4" type="bridge" name="Net-S2iface_2" left="1065" top="295" visibility="0"/>
+    </networks>
+  </topology>
+</lab>
