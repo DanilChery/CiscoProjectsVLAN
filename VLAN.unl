@@ -17,7 +17,7 @@
       <node id="4" name="PC-A" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="756" top="597">
         <interface id="0" name="eth0" type="ethernet" network_id="3"/>
       </node>
-      <node id="5" name="PC-B" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="1029" top="582">
+      <node id="5" name="PC-B" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="1008" top="582">
         <interface id="0" name="eth0" type="ethernet" network_id="4"/>
       </node>
     </nodes>
