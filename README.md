@@ -1,3 +1,4 @@
+![alt-текст](https://github.com/DanilChery/CiscoProjectsVLAN/blob/main/Lab-Vlan-schema.jpg "Текст заголовка логотипа 1")
 # Lab-VLAN
 ## Part 1: Build the Network and Configure Basic Device Settings
 ### •	Configure basic settings for the router.
